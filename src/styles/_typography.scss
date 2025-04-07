@@ -1,0 +1,25 @@
+@mixin default { font: 400 16px/1 var(--ff) }
+
+@mixin presets {
+  .logo      { font: 600 1.5rem var(--ff) }
+  .header    { font: 700 1.75rem var(--ff) }
+  .subheader { font: 600 1.25rem var(--ff) }
+  .paragraph { font: 1rem/1.5 var(--ff) }
+  .caption   { font: 0.9rem/1.5 var(--ff); color: #aaa }
+  
+  .uppercase { text-transform: uppercase; letter-spacing: 0.05em }
+
+  .navlink {
+    font: 1.1rem var(--ff);
+    color: #757575;
+    &:hover, &:focus, &.current { color: #333333 }
+    &.current { border-bottom: 1px solid #333333 }
+  }
+
+  .link { 
+    font-weight: 600; 
+    text-decoration: none; 
+    color: #757575;
+    &:hover, &:focus { text-decoration: underline; color: #333333 }
+  }
+}

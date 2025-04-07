@@ -1,0 +1,31 @@
+@use "reset";
+@use "spacing";
+@use "color";
+@use "layout";
+@use "typography";
+
+@include spacing.presets;
+@include color.presets;
+@include layout.presets;
+@include typography.presets;
+
+/* ------------------------------------------------------------------ Globals */
+
+:root {
+  --ff: "Poppins", "Helvetica", "Helvetica Neue", sans-serif;
+}
+
+html, body { @include typography.default }
+
+body {
+  @include layout.app;
+
+  & > * { 
+    padding: 0 spacing.size("1-1/2"); 
+    background-color: #ffffff 
+  }
+
+  & > header { z-index: 3 }
+  & > main   { z-index: 2 }
+  & > footer { z-index: 1 }
+}

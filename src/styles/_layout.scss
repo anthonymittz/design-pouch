@@ -1,0 +1,87 @@
+@mixin row { // vertically stretchable items
+  display: flex;
+  flex-direction: row;
+
+  &.x-around   { justify-content: space-around  }
+  &.x-baseline { justify-content: baseline      }
+  &.x-between  { justify-content: space-between }
+  &.x-center   { justify-content: center        }
+  &.x-end      { justify-content: flex-end      }
+  &.x-evenly   { justify-content: space-evenly  }
+  &.x-start    { justify-content: flex-start    }
+
+  &.y-baseline { align-items: baseline   }
+  &.y-center   { align-items: center     }
+  &.y-end      { align-items: flex-end   }
+  &.y-start    { align-items: flex-start }
+  &.y-stretch  { align-items: stretch    }
+}
+
+@mixin column { // horizontally stretchable items
+  display: flex;
+  flex-direction: column;
+
+  &.x-baseline { align-items: baseline   }
+  &.x-center   { align-items: center     }
+  &.x-end      { align-items: flex-end   }
+  &.x-start    { align-items: flex-start }
+  &.x-stretch  { align-items: stretch    }
+
+  &.y-around   { justify-content: space-around  }
+  &.y-baseline { justify-content: baseline      }
+  &.y-between  { justify-content: space-between }
+  &.y-center   { justify-content: center        }
+  &.y-end      { justify-content: flex-end      }
+  &.y-evenly   { justify-content: space-evenly  }
+  &.y-start    { justify-content: flex-start    }
+}
+
+@mixin grid {
+  display: grid;
+
+  &.x-start  { justify-items: start  }
+  &.x-center { justify-items: center }
+  &.x-end    { justify-items: end    }
+
+  &.y-start  { align-items: start  }
+  &.y-center { align-items: center }
+  &.y-end    { align-items: end    }
+
+  & > *.to-start  { justify-self: start  }
+  & > *.to-center { justify-self: center }
+  & > *.to-end    { justify-self: end    }
+
+  & > *.to-top    { align-self: start  }
+  & > *.to-middle { align-self: center }
+  & > *.to-bottom { align-self: end    }
+}
+
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin presets() {
+  .grow { flex-grow: 1 }
+  .no-grow { flex-grow: 0 }
+  .shrink { flex-shrink: 1 }
+  .no-shrink { flex-shrink: 0 }
+
+  .row { @include row }
+  .col { @include column }
+  .center { @include center }
+
+  .responsive { @include column }
+  @media screen and (min-width: 768px) { .responsive { @include row } }
+  
+  @for $i from 1 through 12 { .col-#{$i} { @include grid; grid: auto / repeat(#{$i}, 1fr) } }
+}
+
+@mixin app {
+  @include grid;
+  grid: 4rem auto 32px / auto;
+  overflow: hidden;
+  min-height: 100vh;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./_head.ejs") %>
+<body class>
+  <header class="col-3 y-center shadow">
+    <h1 class="to-start logo">Design Pouch</h1>
+    <menu class="to-center row gap-2">
+      <li><a data-navlink="colors" class="navlink current">Colors</a></li>
+      <li><a data-navlink="sizes" class="navlink">Sizes</a></li>
+    </menu>
+    <div class="to-end">
+      🔆🌑
+    </div>
+  </header>
+  <main class="shadow py-1">
+    <div data-page="colors"><%- include("./_colors.ejs") %></div>
+    <div data-page="sizes" hidden=""><%- include("./_sizes.ejs") %></div>
+  </main>
+  <footer class="row x-end y-center">
+    <p class="caption">2025 | By <a href="https://github.com/anthonymittz" target="_blank" and rel="noopener noreferrer" class="link">Anthony Mittz</a></p>
+  </footer>
+</body>
+</html>

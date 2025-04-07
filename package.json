@@ -1,0 +1,37 @@
+{
+  "name": "design-pouch",
+  "version": "0.0.0-0",
+  "description": "A collection of tools for graphic design: typography, colors, spacings and more.",
+  "private": true,
+  "keywords": [],
+  "author": "Anthony Mittz <anthonymittz@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "build/dev": "webpack --mode=development",
+    "serve": "webpack serve --mode=development",
+    "watch": "webpack watch --mode=development"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "babel-loader": "latest",
+    "css-loader": "latest",
+    "css-minimizer-webpack-plugin": "latest",
+    "ejs": "latest",
+    "html-loader": "latest",
+    "html-webpack-plugin": "latest",
+    "jsdom": "latest",
+    "jsdom-global": "latest",
+    "mangle-css-class-webpack-plugin": "latest",
+    "mini-css-extract-plugin": "latest",
+    "nodemon": "latest",
+    "sass": "latest",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest",
+    "webpack-dev-server": "latest",
+    "webpack-preprocessor-loader": "latest"
+  }
+}
