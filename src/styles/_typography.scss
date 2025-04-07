@@ -7,13 +7,14 @@
   .paragraph { font: 1rem/1.5 var(--ff) }
   .caption   { font: 0.9rem/1.5 var(--ff); color: #aaa }
   
+  .monospaced { font-family: "Roboto Mono", monospace; font-optical-sizing: auto }
   .uppercase { text-transform: uppercase; letter-spacing: 0.05em }
 
   .navlink {
     font: 1.1rem var(--ff);
     color: #757575;
     &:hover, &:focus, &.current { color: #333333 }
-    &.current { border-bottom: 1px solid #333333 }
+    &.current { border-bottom: 2px solid #a5a5a5 } //c3fa22
   }
 
   .link { 

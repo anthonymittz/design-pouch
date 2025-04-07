@@ -29,3 +29,32 @@ body {
   & > main   { z-index: 2 }
   & > footer { z-index: 1 }
 }
+
+input {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  &:active, &:focus {
+    outline: none;
+    border-bottom: 1px solid #333;
+  }
+}
+
+.swatch {
+  $size: 8rem;
+  width: $size;
+  height: $size;
+  border-radius: 6px;
+  background-color: #ccc;
+  padding: spacing.size("1/2");
+  @extend .row, .x-center, .y-end, .monospaced;
+
+  input {
+    color: #333333;
+    width: 5rem;
+    text-align: center;
+
+    &.light { color: #eeeeee; }
+  }
+}

@@ -55,6 +55,8 @@ function getConfig(_, argv) {
     optimization: { minimizer: ["...", new CssMinimizerPlugin()] },
     devtool: isDevMode && needSourceMaps && "source-map",
     devServer: dev_server(),
+    infrastructureLogging: { level: 'error' },
+    stats: 'minimal'
   }
 }
 

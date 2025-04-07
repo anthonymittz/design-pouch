@@ -23,3 +23,8 @@ img, picture, video, canvas, svg
 
 a, button 
 { cursor: pointer }
+
+input[type="text"] { 
+  width: 2rem;
+  color: inherit;
+}
